@@ -71,8 +71,9 @@ export default defineComponent({
 .cards {
   border: 1px solid #ddd;
   border-radius: 6px;
-  max-width: 350px;
+  max-width: 33%;
   min-width: 350px;
+  height: 220px;
   text-align: center;
   margin-top: 60px;
   background-color: #bcd2d9;

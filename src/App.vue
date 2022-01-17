@@ -1,6 +1,8 @@
 <template>
-  <Navbar />
-  <router-view />
+  <div id="app">
+    <Navbar />
+    <router-view />
+  </div>
 </template>
 <script>
 import { defineComponent } from '@vue/composition-api'

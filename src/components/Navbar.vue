@@ -67,10 +67,14 @@
   font-weight: 600;
   color: #17003d;
   border-color: #17003d;
+  margin-right: 1rem !important;
 }
 .nav_button:hover {
   color: #2a2730;
   background-color: #ffe484;
   border-color: #ffe484;
+}
+.title:hover {
+  cursor: pointer;
 }
 </style>
