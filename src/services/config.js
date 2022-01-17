@@ -1,5 +1,4 @@
 import axios from 'axios'
-const API_KEY = 'AIzaSyDqoR37u51tObMAAAUdze2d7poeuKw6b84'
 
 export const http = axios.create({
   baseURL: 'https://rickandmortyapi.com/api/'
