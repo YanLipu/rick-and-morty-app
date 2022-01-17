@@ -121,6 +121,8 @@ export default defineComponent({
       ])
     }
 
+    //youtube api limits reqs
+
     const list = computed(() => {
       return state.episodesList
     })
