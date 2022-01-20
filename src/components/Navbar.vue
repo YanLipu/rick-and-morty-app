@@ -1,6 +1,6 @@
 <template>
   <nav class="nav">
-    <div class="nav_item">
+    <div hidden class="nav_item">
       <a class="nav_button" @click="$router.push({ name: 'locations' })"
         >LOCATIONS</a
       >

@@ -11,13 +11,18 @@
     </div>
 
     <div class="content">
-      <div v-for="ep in episodesList" :key="ep">
+      <div v-for="(ep, index) in episodesList" :key="ep">
         <div class="episodes_information">
-          <h3>{{ ep.name }}</h3>
-          <p>{{ ep.episode }}</p>
-          <p>{{ ep.characters.length }}</p>
-          <p>{{ ep.air_date }}</p>
-          <a href="">Ver todos os personagens</a>
+          <div class="video_thumb">
+            <img :src="videosList[index][0].snippet.thumbnails.high.url" />
+          </div>
+          <div class="ep_infos">
+            <h4>{{ ep.name }}</h4>
+            <p>{{ ep.episode }}</p>
+            <p>{{ ep.characters.length }}</p>
+            <p>{{ ep.air_date }}</p>
+            <a @click="openAllChars()">Ver todos os personagens</a>
+          </div>
         </div>
       </div>
     </div>
@@ -43,7 +48,8 @@ export default defineComponent({
     const state = reactive({
       el: '#tabs',
       activetab: null,
-      episodesList: []
+      episodesList: [],
+      videosList: []
     })
 
     watch(
@@ -69,7 +75,7 @@ export default defineComponent({
             state.episodesList.push(element)
           }
         })
-
+        listVideos(state.episodesList)
         //
       } else if (state.activetab === 2) {
         state.episodesList = []
@@ -80,7 +86,7 @@ export default defineComponent({
             state.episodesList.push(element)
           }
         })
-        //
+        listVideos(state.episodesList)
       } else if (state.activetab === 3) {
         state.episodesList = []
         prop.episodes.forEach(element => {
@@ -89,7 +95,7 @@ export default defineComponent({
             state.episodesList.push(element)
           }
         })
-        //
+        listVideos(state.episodesList)
       } else if (state.activetab === 4) {
         state.episodesList = []
         prop.episodes.forEach(element => {
@@ -99,7 +105,7 @@ export default defineComponent({
             state.episodesList.push(element)
           }
         })
-        //
+        listVideos(state.episodesList)
       }
     }
 
@@ -113,7 +119,11 @@ export default defineComponent({
             }
           })
           .then(response => {
-            console.log('a pesquisa dos videos é: ', response)
+            if (state.videosList.length > 0) {
+              state.videosList = []
+            }
+            state.videosList.push(response.data.items)
+            console.log('a pesquisa dos videos é: ', state.videosList)
           })
           .catch(error => {
             console.log('error', error)
@@ -205,7 +215,25 @@ export default defineComponent({
   box-shadow: 3px 3px 6px #e1e1e1;
 }
 .episodes_information {
-  border: 1px solid;
-  padding-bottom: 5px;
+  display: flex;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+}
+.video_thumb {
+  width: 220px;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: calc(0.25rem - 1px);
+  align-content: center;
+}
+.video_thumb img {
+  width: 100%;
+}
+.ep_infos {
+  flex: 1 1 auto;
+  min-height: 1px;
 }
 </style>
