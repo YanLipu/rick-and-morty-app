@@ -8,7 +8,7 @@ e de episódios de Rick And Morty.
 ## The Rick and Morty API
 
  - [Public Api - Rick and Morty](https://rickandmortyapi.com/documentation)
-## Tecnologia Utilizadas
+## Tecnologias Utilizadas
 
 - Vue.js
 - HTML(sem biblioteca para estilização)
