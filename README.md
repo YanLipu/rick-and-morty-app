@@ -41,4 +41,6 @@ Rodando o projeto em modo de desenvolvimento
 
 Em caso de dúvidas, mensagens são bem vindas
  em meus canais de contato disponíveis em meu [perfil](https://github.com/yanlipu).
+ 
+Divirta-se!
 
