@@ -15,7 +15,7 @@
       <div class="resumo">
         <div class="resumo_itens">
           <div class="resumo_content">
-            <h3>EPISODIOS TOTAIS</h3>
+            <h3>EPISÓDIOS TOTAIS</h3>
             <span>{{ totalEps }}</span>
           </div>
         </div>
